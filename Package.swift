@@ -28,9 +28,17 @@ let package = Package(
             name: "Tensor",
             type: .dynamic,
             targets: ["Tensor"]),
+        .executable(
+            name: "Kalman",
+            targets: ["Kalman"]
+        )
     ],
     dependencies: [],
     targets: [
+        .target(
+            name: "Kalman",
+            dependencies: ["TensorFlow"],
+            path: "Sources/Kalman"),
         .target(
             name: "Tensor",
             dependencies: []),
